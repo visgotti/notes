@@ -28,11 +28,7 @@ const getNextNodeId = () => {
   }
 }
 
-const saveNotes = () => {
-  try {
-    fs.writeFileSync(notesPath, JSON.stringify(notes), 'utf-8');
-  } catch (err) {}
-}
+const saveNotes = () => fs.writeFileSync(notesPath, JSON.stringify(notes), 'utf-8');
 
 const addNote = (note: Note) => {
   notes.unshift(note);
